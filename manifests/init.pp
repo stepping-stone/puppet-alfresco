@@ -61,18 +61,6 @@ class alfresco (
 	$custom_settings=[]
 ) inherits alfresco::params {
 
-  case $::osfamily {
-    debian: {
-      class { 'alfresco::debian':
-      }
-    }
-    gentoo: {
-      class { 'alfresco::gentoo':
-      }
-    }
-    default: {
-      fail("Unsupported platform: ${::osfamily}/${::operatingsystem}")
-    }
-  }
+  include alfresco::install
 	
 }
