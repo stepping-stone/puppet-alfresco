@@ -1,10 +1,9 @@
-# = Class: alfresco::gentoo
+# = Class: alfresco::install::gentoo
 #
-# Gentoo-specific installation
-#
+# Gentoo-specific installation.
 #
 
-class alfresco::gentoo {
+class alfresco::install::gentoo {
   portage::package { 'www-apps/alfresco-bin':
     ensure   => present,
     keywords => ['~amd64'],

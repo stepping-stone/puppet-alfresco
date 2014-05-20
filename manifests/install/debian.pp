@@ -1,10 +1,9 @@
-# = Class: alfresco::debian
+# = Class: alfresco::install::debian
 #
-# Debian-specific installation
-#
+# Debian-specific installation.
 #
 
-class alfresco::debian {
+class alfresco::install::debian {
 
   $zip = "alfresco-community-${version}.zip"
   $download_url = "http://dl.alfresco.com/release/community/build-${build}/${zip}"
