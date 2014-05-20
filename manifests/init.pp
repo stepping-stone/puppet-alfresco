@@ -1,6 +1,6 @@
 # = Class: alfresco
 # 
-# Install and configure Alfresco
+# Install and configure Alfresco.
 #
 # == Parameters
 #
@@ -59,7 +59,7 @@ class alfresco (
 	$imap_host = $fqdn,
 	$authentication_chain="alfrescoNtlm1:alfrescoNtlm",
 	$custom_settings=[]
-) {
+) inherits alfresco::params {
 
   case $::osfamily {
     debian: {
