@@ -65,23 +65,4 @@ class alfresco (
     }
   }
 	
-# the webapp
-  tomcat::webapp { $user:
-    username => $user,
-    webapp_base => $webapp_base,
-    number => $number,
-    max_number_open_files => "8192",		
-    java_opts => "-XX:MaxPermSize=512m -Xms${memory} -Xmx${memory} -Dalfresco.home=${alfresco_home} -Dcom.sun.management.jmxremote",
-    description => "Alfresco ECM",
-    service_require => [
-      File['alfresco-war'],
-      File['share-war'],
-      File['alfresco-db-driver'],
-      File['alfresco-global.properties'],
-      File['share-config-custom.xml'],
-      File[$alfresco_home]
-    ],
-    require => Class["tomcat"],
-  }
-
 }
