@@ -1,15 +1,23 @@
-# Class: alfresco
+# = Class: alfresco
+# 
+# Install and configure Alfresco
 #
-# This module manages alfresco
+# == Parameters
 #
-# Parameters:
+# [*user*]
 #
-# Actions:
+# The name of the alfresco user.
 #
-# Requires:
+# == Example
 #
-# Sample Usage:
+#     class { 'alfresco':
+#       $user = 'example',
+#     }
 #
+# == See Also
+#
+#
+
 class alfresco (
 	$user = "alfresco",	
 	$database_name = "alfresco",
