@@ -63,10 +63,12 @@ class alfresco (
 
   case $::osfamily {
     debian: {
-      include alfresco::debian
+      class { 'alfresco::debian':
+      }
     }
     gentoo: {
-      include alfresco::gentoo
+      class { 'alfresco::gentoo':
+      }
     }
     default: {
       fail("Unsupported platform: ${::osfamily}/${::operatingsystem}")
