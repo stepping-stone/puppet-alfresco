@@ -24,7 +24,7 @@ class alfresco::params {
   $database_driver          = 'org.postgresql.Driver'
   $database_url             = 'jdbc:postgresql://localhost/alfresco'
   $ftp_enabled              = 'false'
-  $guest_login              = 'false
+  $guest_login              = 'false'
   $orpahn_protect_days      = undef
   $orphan_cleanup_cron      = undef
   $reencrypt                = undef
