@@ -88,6 +88,7 @@ class alfresco (
   $database_driver_source    = $alfresco::params::database_driver_source,
 ) inherits alfresco::params {
 
-  include alfresco::install
+  class { 'alfresco::install': } ->
+  class { 'alfresco::config': }
 	
 }
