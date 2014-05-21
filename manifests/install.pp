@@ -15,7 +15,9 @@ class alfresco::install {
       }
     }
     gentoo: {
-      class { 'alfresco::install::gentoo':
+      portage::package { $alfresco::package_name:
+        ensure   => $alfresco::version,
+        keywords => ['~${architecture}'],
       }
     }
     default: {
