@@ -46,40 +46,12 @@ class alfresco::install {
         }	
       }
       
-      package { "python-software-properties":
-        ensure => present,
-      }
-      
-      exec { "apt-update-swftools":
-        command => "/usr/bin/aptitude update",
-        refreshonly => true,
-      }
-      
-      exec { "add-apt-repository-swftools":
-        command => "/usr/bin/add-apt-repository ppa:guilhem-fr/swftools",
-        notify => Exec["apt-update-swftools"],
-        require => Package["python-software-properties"],
-      }
-      
-      package { "imagemagick":
-        ensure => latest,
-      }
-      
-      package { "swftools":
-        ensure => latest,
-        require => Exec["apt-update-swftools"],
-      }
-      
-      package { "libreoffice":
-        ensure => latest,
-      }
       # download and extract alfresco
       file { $alfresco_home:
         ensure => directory,
         mode => 0755,
         owner => $user,
         group => $user,
-        require => Tomcat::Webapp::User[$user],
       }
       
       exec { "download-alfresco":
@@ -112,10 +84,7 @@ class alfresco::install {
         command => "/bin/mv /tmp/alfresco-${version}/web-server/webapps/alfresco.war ${alfresco_dir}/tomcat/webapps/${alfresco_webapp_war}",
         refreshonly => true,
         user => "root",
-        require => [
-          Exec["extract-alfresco"],
-          Tomcat::Webapp::Tomcat[$user]
-        ]
+        require => Exec["extract-alfresco"],
       }
       
       file { "alfresco-war":
@@ -131,10 +100,7 @@ class alfresco::install {
         command => "/bin/mv /tmp/alfresco-${version}/web-server/webapps/share.war ${alfresco_dir}/tomcat/webapps/${share_webapp_war}",
         refreshonly => true,
         user => "root",
-        require => [
-          Exec["extract-alfresco"],
-          Tomcat::Webapp::Tomcat[$user]
-        ]
+        require => Exec["extract-alfresco"],
       }
       
       file { "share-war":
@@ -149,10 +115,7 @@ class alfresco::install {
       exec { "move-alfresco-licences":
         command => "/bin/mv /tmp/alfresco-${version}/licenses ${alfresco_dir}/tomcat/",
         creates => "${alfresco_dir}/tomcat/licenses",
-        require => [
-          Exec["extract-alfresco"],
-          Tomcat::Webapp::Tomcat[$user]
-        ]
+        require => Exec["extract-alfresco"],
       }
       # the database driver jar
       file { 'alfresco-db-driver':
@@ -161,37 +124,6 @@ class alfresco::install {
         ensure => file,
         owner => $user,
         group => $user,
-        require => Tomcat::Webapp::Tomcat[$user],
-      }
-      # the configuration files
-      file { "alfresco-global.properties":
-        path => "${alfresco_dir}/tomcat/shared/classes/alfresco-global.properties",
-        content => template("alfresco/alfresco-global.properties.erb"),
-        require => Tomcat::Webapp::Tomcat[$user],
-        notify => Tomcat::Webapp::Service[$user],
-      }
-      
-      file { "${alfresco_dir}/tomcat/shared/classes/alfresco":
-        ensure => directory,
-        owner => $user,
-        group => $user,
-        mode => 0755,
-        require => Tomcat::Webapp::Tomcat[$user],
-      }
-      
-      file { "${alfresco_dir}/tomcat/shared/classes/alfresco/web-extension":
-        ensure => directory,
-        owner => $user,
-        group => $user,
-        mode => 0755,
-        require => File["${alfresco_dir}/tomcat/shared/classes/alfresco"],
-        notify => Tomcat::Webapp::Service[$user],
-      }
-      
-      file { "share-config-custom.xml":
-        path => "${alfresco_dir}/tomcat/shared/classes/alfresco/web-extension/share-config-custom.xml",
-        content => template("alfresco/share-config-custom.xml.erb"),
-        require => File["${alfresco_dir}/tomcat/shared/classes/alfresco/web-extension"],
       }
     }
     gentoo: {
