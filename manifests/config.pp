@@ -39,6 +39,14 @@ class alfresco::config {
       }
     }
     gentoo: {
+      file { 'alfresco-global.properties':
+        path => '/etc/alfresco-4.2/classes/alfresco-global.properties',
+        content => template("alfresco/alfresco-global.properties.erb"),
+      }
+      file { 'alfresco.xml':
+        path => '/etc/alfresco-4.2/Catalina/localhost/alfresco.xml',
+        content => template("alfresco/alfresco.erb"),
+      }
     }
     default: {
       fail("Unsupported platform: ${::osfamily}/${::operatingsystem}")
