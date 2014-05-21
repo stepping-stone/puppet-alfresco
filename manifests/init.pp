@@ -24,7 +24,7 @@ class alfresco (
   $alfresco_protocol         = $alfresco::params::alfresco_protocol,
   $share_host                = $alfresco::params::share_host,
   $share_port                = $alfresco::params::share_port,
-  share_protocol             = $alfresco::params::share_protocol,
+  $share_protocol            = $alfresco::params::share_protocol,
   $cifs_enabled              = $alfresco::params::cifs_enabled,
   $cifs_servername           = $alfresco::params::cifs_servername,
   $cifs_domain               = $alfresco::params::cifs_domain,
