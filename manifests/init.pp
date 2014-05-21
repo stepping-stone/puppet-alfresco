@@ -91,6 +91,7 @@ class alfresco (
 ) inherits alfresco::params {
 
   class { 'alfresco::install': } ->
-  class { 'alfresco::config': }
+  class { 'alfresco::config': } ~>
+  class { 'alfresco::service': }
 	
 }
