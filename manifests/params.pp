@@ -50,6 +50,7 @@ class alfresco::params {
   $mail_inbound_enabled     = undef
   $mail_enabled             = undef
   $imap_enabled             = undef
+  $custom_settings          = []
 
   if $alfresco::cifs_enabled == 'true' {
     $cifs_servername           = $hostname

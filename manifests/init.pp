@@ -87,6 +87,7 @@ class alfresco (
   $tomcat_memory             = $alfresco::params::tomcat_memory,
   $database_driver_jar       = $alfresco::params::database_driver_jar,
   $database_driver_source    = $alfresco::params::database_driver_source,
+  $custom_settings           = $alfresco::params::custom_settings,
 ) inherits alfresco::params {
 
   class { 'alfresco::install': } ->
