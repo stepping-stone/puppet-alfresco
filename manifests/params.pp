@@ -14,7 +14,7 @@ class alfresco::params {
   $alfresco_protocol        = 'http'
   $share_host               = $alfresco_host
   $share_port               = $alfresco_port
-  share_protocol            = $alfresco_protocol
+  $share_protocol           = $alfresco_protocol
   $cifs_enabled             = undef
   $solr_host                = undef
   $solr_port                = undef
