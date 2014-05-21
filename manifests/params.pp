@@ -8,4 +8,13 @@
 #
 
 class alfresco::params {
+  case $::osfamily {
+    debian: {
+    }
+    gentoo: {
+    }
+    default: {
+      fail("Unsupported platform: ${::osfamily}/${::operatingsystem}")
+    }
+  }
 }
