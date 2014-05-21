@@ -94,12 +94,13 @@ class alfresco::params {
 
   case $::osfamily {
     debian: {
+      $package_name           = undef
+      $version                = '4.2.a'
+      $number                 = 7
+      $build                  = 4428
       $dir_root               = undef
       $dir_keystore           = undef
       $user                   = 'alfresco'
-      $number                 = 7
-      $version                = '4.2.a'
-      $build                  = 4428
       $alfresco_contextroot   = 'alfresco'
       $share_contextroot      = 'share'
       $webapp_base            = '/srv'
@@ -109,12 +110,13 @@ class alfresco::params {
       $database_driver_source = 'puppet:///modules/alfresco/db/postgresql-9.1-902.jdbc4.jar'
     }
     gentoo: {
+      $package_name           = 'www-apps/alfresco-bin'
+      $version                = 'latest'
+      $number                 = undef
+      $build                  = undef
       $dir_root               = '/var/lib/alfresco-4.2/data'
       $dir_keystore           = '/var/lib/alfresco-4.2/keystore'
       $user                   = undef
-      $number                 = undef
-      $version                = undef
-      $build                  = undef
       $alfresco_contextroot   = undef
       $share_contextroot      = undef
       $webapp_base            = undef
