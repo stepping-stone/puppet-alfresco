@@ -41,13 +41,13 @@ ftp.enabled=false
 #
 # Outbound Email Configuration
 #-------------
-mail.host=<%= scope.lookupvar('alfresco::smtp_host) %>
-mail.port=<%= scope.lookupvar('alfresco::smtp_port) %>
-mail.username=<%= scope.lookupvar('alfresco::smtp_username) %>
-mail.password=<%= scope.lookupvar('alfresco::smtp_password) %>
-mail.encoding=<%= scope.lookupvar('alfresco::smtp_encoding) %>
-mail.from.default=<%= scope.lookupvar('alfresco::smtp_from_default) %>
-mail.smtp.auth=<%= scope.lookupvar('alfresco::smtp_auth) %>
+mail.host=<%= scope.lookupvar('alfresco::smtp_host') %>
+mail.port=<%= scope.lookupvar('alfresco::smtp_port') %>
+mail.username=<%= scope.lookupvar('alfresco::smtp_username') %>
+mail.password=<%= scope.lookupvar('alfresco::smtp_password') %>
+mail.encoding=<%= scope.lookupvar('alfresco::smtp_encoding') %>
+mail.from.default=<%= scope.lookupvar('alfresco::smtp_from_default') %>
+mail.smtp.auth=<%= scope.lookupvar('alfresco::smtp_auth') %>
 
 #
 # Alfresco Email Service and Email Server
@@ -56,14 +56,14 @@ mail.smtp.auth=<%= scope.lookupvar('alfresco::smtp_auth) %>
 # Enable/Disable the inbound email service.  The service could be used by processes other than
 # the Email Server (e.g. direct RMI access) so this flag is independent of the Email Service.
 #-------------
-email.inbound.enabled=<%= scope.lookupvar('alfresco::mail_inbound_enabled) %>
+email.inbound.enabled=<%= scope.lookupvar('alfresco::mail_inbound_enabled') %>
 
 # Email Server properties 
 #-------------
-email.server.enabled=<%= scope.lookupvar('alfresco::mail_enabled) %>
-email.server.port=<%= scope.lookupvar('alfresco::mail_port) %>
-email.server.domain=<%= scope.lookupvar('alfresco::mail_domain) %>
-email.inbound.unknownUser=<%= scope.lookupvar('alfresco::mail_unknown_user) %>
+email.server.enabled=<%= scope.lookupvar('alfresco::mail_enabled') %>
+email.server.port=<%= scope.lookupvar('alfresco::mail_port') %>
+email.server.domain=<%= scope.lookupvar('alfresco::mail_domain') %>
+email.inbound.unknownUser=<%= scope.lookupvar('alfresco::mail_unknown_user') %>
 
 # A comma separated list of email REGEX patterns of allowed senders.
 # If there are any values in the list then all sender email addresses
@@ -71,24 +71,24 @@ email.inbound.unknownUser=<%= scope.lookupvar('alfresco::mail_unknown_user) %>
 #   .*\@alfresco\.com, .*\@alfresco\.org
 # Allow anyone:
 #-------------
-email.server.allowed.senders=<%= scope.lookupvar('alfresco::mail_allowed_senders) %>
+email.server.allowed.senders=<%= scope.lookupvar('alfresco::mail_allowed_senders') %>
 
 #
 # URL Generation Parameters (The ${localname} token is replaced by the local server name)
 #-------------
-alfresco.context=<%= scope.lookupvar('alfresco::alfresco_webapp_context) %>
-alfresco.host=<%= scope.lookupvar('alfresco::alfresco_host) %>
-alfresco.port=<%= scope.lookupvar('alfresco::alfresco_port) %>
-alfresco.protocol=<%= scope.lookupvar('alfresco::alfresco_protocol) %>
+alfresco.context=<%= scope.lookupvar('alfresco::alfresco_webapp_context') %>
+alfresco.host=<%= scope.lookupvar('alfresco::alfresco_host') %>
+alfresco.port=<%= scope.lookupvar('alfresco::alfresco_port') %>
+alfresco.protocol=<%= scope.lookupvar('alfresco::alfresco_protocol') %>
 
-share.context=<%= scope.lookupvar('alfresco::share_webapp_context) %>
-share.host=<%= scope.lookupvar('alfresco::share_host) %>
-share.port=<%= scope.lookupvar('alfresco::share_port) %>
-share.protocol=<%= scope.lookupvar('alfresco::share_protocol) %>
+share.context=<%= scope.lookupvar('alfresco::share_webapp_context') %>
+share.host=<%= scope.lookupvar('alfresco::share_host') %>
+share.port=<%= scope.lookupvar('alfresco::share_port') %>
+share.protocol=<%= scope.lookupvar('alfresco::share_protocol') %>
 
-imap.server.enabled=<%= scope.lookupvar('alfresco::imap_enabled) %>
-imap.server.port=<%= scope.lookupvar('alfresco::imap_port) %>
-imap.server.host=<%= scope.lookupvar('alfresco::imap_host) %>
+imap.server.enabled=<%= scope.lookupvar('alfresco::imap_enabled') %>
+imap.server.port=<%= scope.lookupvar('alfresco::imap_port') %>
+imap.server.host=<%= scope.lookupvar('alfresco::imap_host') %>
 
 # Default value of alfresco.rmi.services.host is 0.0.0.0 which means 'listen on all adapters'.
 # This allows connections to JMX both remotely and locally.
@@ -113,6 +113,6 @@ alfresco.rmi.services.host=0.0.0.0
 #wcm-deployment-receiver.rmi.service.port=50507
 #monitor.rmi.service.port=50508
 
-<% custom_settings.each do |setting| -%>
+<% scope.lookupvar('alfresco::custom_settings').each do |setting| -%>
 <%= setting %>
 <% end -%>
