@@ -6,27 +6,27 @@
 #
 # Content and index data location
 #
-dir.root=<%= scope['alfresco::dir_root'] %>
+dir.root=<%= @dir_root %>
 <% end %>
 
-<% if scope['alfresco::dir_keystore'] %>
+<% if @dir_keystore %>
 #
 # Encryption keystores location
 #
-dir.keystore=<%= scope['alfresco::dir_keystore'] %>
+dir.keystore=<%= @dir_keystore %>
 <% end %>
 
-<% if scope['alfresco::database_user'] %>
+<% if @database_user %>
 #
 # Database connection properties
 #
 db.username=<%= scope['alfresco::database_user'] %>
 <% end %>
-<% if scope['alfresco::database_password'] %>
+<% if @database_password %>
 db.password=<%= scope['alfresco::database_password'] %>
 <% end %>
 
-<% if scope['alfresco::reencrypt'] %>
+<% if @reencrypt %>
 #
 # Should encryptable properties be re-encrypted with new encryption keys on botstrap?
 #
