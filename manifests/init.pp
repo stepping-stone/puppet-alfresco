@@ -91,6 +91,13 @@ class alfresco (
   $custom_settings           = $alfresco::params::custom_settings,
 ) inherits alfresco::params {
 
+  case $::osfamily {
+    debian: {
+      $database_user_debian     = $database_user
+      $database_password_debian = $database_password
+    }
+  }
+
   class { 'alfresco::install': } ->
   class { 'alfresco::config': } ~>
   class { 'alfresco::service': }
