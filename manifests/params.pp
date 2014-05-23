@@ -37,7 +37,7 @@ class alfresco::params {
   $smtp_user                = undef
   $smtp_password            = undef
   $smtp_encoding            = 'UTF-8'
-  $smtp_from_default        = 'alfresco@${fqnd}'
+  $smtp_from_default        = "alfresco@${fqnd}"
   $smtp_from_enabled        = 'false'
   $smtp_auth                = 'false'
   $smtp_timeout             = undef
