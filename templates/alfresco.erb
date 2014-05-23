@@ -7,7 +7,7 @@
 		type="javax.sql.DataSource"
 		auth="Container"
 		factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
-		driverClassName="<%= scope.lookupvar('alfresco::database_driver') %>" 
+		driverClassName="<%= scope['alfresco::database_driver'] %>" 
 		minIdle="3" maxIdle="10" maxActive="20"
 		initialSize="6"
 		suspectTimeout="120"
@@ -17,9 +17,9 @@
 		validationQuery="select 1"
 		validationInterval="10000"
 		jdbcInterceptors="SlowQueryReportJmx(threshold=5000)"
-		username="<%= scope.lookupvar('alfresco::database_user') %>"
-		password="<%= scope.lookupvar('alfresco::database_password') %>"
-		url="<%= scope.lookupvar('alfresco::database_url') %>" />
+		username="<%= scope['alfresco::database_user'] %>"
+		password="<%= scope['alfresco::database_password'] %>"
+		url="<%= scope['alfresco::database_url'] %>" />
 
 	<!-- 
 		A flag that globally enables or disables startup of the major Alfresco 
