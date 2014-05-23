@@ -9,9 +9,12 @@
 
 class alfresco::config {
 
+  File {
+    require => Class['alfresco::install'],
+  }
+
   case $::osfamily {
     debian: {
-      # the configuration files
       file { "alfresco-global.properties":
         path => "${alfresco_dir}/tomcat/shared/classes/alfresco-global.properties",
         content => template("alfresco/alfresco-global.properties.erb"),
@@ -20,14 +23,14 @@ class alfresco::config {
       file { "${alfresco_dir}/tomcat/shared/classes/alfresco":
         ensure => directory,
         owner => $user,
-        group => $user,
+        group => $group,
         mode => 0755,
       }
 
       file { "${alfresco_dir}/tomcat/shared/classes/alfresco/web-extension":
         ensure => directory,
         owner => $user,
-        group => $user,
+        group => $group,
         mode => 0755,
         require => File["${alfresco_dir}/tomcat/shared/classes/alfresco"],
       }
@@ -39,12 +42,19 @@ class alfresco::config {
       }
     }
     gentoo: {
+      File {
+        owner => $user,
+	group => $group,
+	mode  => 0640,
+      }
+
       file { 'alfresco-global.properties':
-        path => '/etc/alfresco-4.2/classes/alfresco-global.properties',
+        path    => '/etc/alfresco-4.2/classes/alfresco-global.properties',
         content => template("alfresco/alfresco-global.properties.erb"),
       }
+
       file { 'alfresco.xml':
-        path => '/etc/alfresco-4.2/Catalina/localhost/alfresco.xml',
+        path    => '/etc/alfresco-4.2/Catalina/localhost/alfresco.xml',
         content => template("alfresco/alfresco.erb"),
       }
     }
