@@ -2,69 +2,45 @@
 ## Common Alfresco Properties #
 ###############################
 
-<% if @dir_root %>
-#
+<% if @dir_root %>#
 # Content and index data location
 #
-dir.root=<%= @dir_root %>
-<% end %>
+dir.root=<%= @dir_root %><% end %>
 
-<% if @dir_keystore %>
-#
+<% if @dir_keystore %>#
 # Encryption keystores location
 #
-dir.keystore=<%= @dir_keystore %>
-<% end %>
+dir.keystore=<%= @dir_keystore %><% end %>
 
-<% if @database_user %>
 #
 # Database connection properties
 #
-db.username=<%= @database_user %>
-<% end %>
-<% if @database_password %>
-db.password=<%= @database_password %>
-<% end %>
+<% if @database_user %>db.username=<%= @database_user %><% end %>
+<% if @database_password %>db.password=<%= @database_password %><% end %>
 
-<% if @reencrypt %>
-#
+<% if @reencrypt %>#
 # Should encryptable properties be re-encrypted with new encryption keys on botstrap?
 #
-encryption.bootstrap.reencrypt=<%= @reencrypt %>
-<% end %>
+encryption.bootstrap.reencrypt=<%= @reencrypt %><% end %>
 
-<% if @ooo_enabled %>
-#
+<% if @ooo_enabled %>#
 # Enable/Disable the direct OpenOffice integration.
 #
-ooo.enabled=<%= @ooo_enabled %>
-<% end %>
+ooo.enabled=<%= @ooo_enabled %><% end %>
 
 #
 # External locations
 #-------------
-<% if @ooo_exe %>
-ooo.exe=<%= @ooo_exe %>
-<% end %>
-<% if @img_exe %>
-img.exe=<%= @img_exe %>
-<% end %>
-<% if @swf_exe %>
-swf.exe=<%= @swf_exe %>
-<% end %>
+<% if @ooo_exe %>ooo.exe=<%= @ooo_exe %><% end %>
+<% if @img_exe %>img.exe=<%= @img_exe %><% end %>
+<% if @swf_exe %>swf.exe=<%= @swf_exe %><% end %>
 
 #
 # The hostname and ports of your SOLR instance.
 #
-<% if @solr_host %>
-solr.host=<%= @solr_host %>
-<% end %>
-<% if @solr_port %>
-solr.port=<%= @solr_port %>
-<% end %>
-<% if @solr_port_ssl %>
-solr.port.ssl=<%= @solr_port_ssl %>
-<% end %>
+<% if @solr_host %>solr.host=<%= @solr_host %><% end %>
+<% if @solr_port %>solr.port=<%= @solr_port %><% end %>
+<% if @solr_port_ssl %>solr.port.ssl=<%= @solr_port_ssl %><% end %>
 
 #
 # RMI services
@@ -79,164 +55,76 @@ alfresco.rmi.services.host=0.0.0.0
 #
 # URL Generation Parameters (The ${localname} token is replaced by the local server name)
 #-------------
-<% if @alfresco_contextroot %>
-alfresco.context=<%= @alfresco_contextroot %>
-<% end %>
-<% if @alfresco_host %>
-alfresco.host=<%= @alfresco_host %>
-<% end %>
-<% if @alfresco_port %>
-alfresco.port=<%= @alfresco_port %>
-<% end %>
-<% if @alfresco_protocol %>
-alfresco.protocol=<%= @alfresco_protocol %>
-<% end %>
+<% if @alfresco_contextroot %>alfresco.context=<%= @alfresco_contextroot %><% end %>
+<% if @alfresco_host %>alfresco.host=<%= @alfresco_host %><% end %>
+<% if @alfresco_port %>alfresco.port=<%= @alfresco_port %><% end %>
+<% if @alfresco_protocol %>alfresco.protocol=<%= @alfresco_protocol %><% end %>
 
-<% if @share_contextroot %>
-share.context=<%= @share_contextroot %>
-<% end %>
-<% if @share_host %>
-share.host=<%= @share_host %>
-<% end %>
-<% if @share_port %>
-share.port=<%= @share_port %>
-<% end %>
-<% if @share_protocol %>
-share.protocol=<%= @share_protocol %>
-<% end %>
+<% if @share_contextroot %>share.context=<%= @share_contextroot %><% end %>
+<% if @share_host %>share.host=<%= @share_host %><% end %>
+<% if @share_port %>share.port=<%= @share_port %><% end %>
+<% if @share_protocol %>share.protocol=<%= @share_protocol %><% end %>
 
-<% if @imap_enabled %>
-imap.server.enabled=<%= @imap_enabled %>
-<% end %>
-<% if @imap_port %>
-imap.server.port=<%= @imap_port %>
-<% end %>
-<% if @imap_host %>
-imap.server.host=<%= @imap_host %>
-<% end %>
+<% if @imap_enabled %>imap.server.enabled=<%= @imap_enabled %><% end %>
+<% if @imap_port %>imap.server.port=<%= @imap_port %><% end %>
+<% if @imap_host %>imap.server.host=<%= @imap_host %><% end %>
 
-<% if @cifs_enabled %>
-cifs.enabled=<%= @cifs_enabled %>
-<% end %>
-<% if @cifs_port %>
-cifs.tcpipSMB.port=<%= @cifs_port %>
-<% end %>
-<% if @cifs_nameport %>
-cifs.netBIOSSMB.namePort=<%= @cifs_nameport %>
-<% end %>
-<% if @cifs_datagramport %>
-cifs.netBIOSSMB.datagramPort=<%= @cifs_datagramport %>
-<% end %>
-<% if @cifs_sessionport %>
-cifs.netBIOSSMB.sessionPort=<%= @cifs_sessionport %>
-<% end %>
-<% if @cifs_servername %>
-cifs.serverName=<%= @cifs_servername %>
-<% end %>
-<% if @cifs_domain %>
-cifs.domain=<%= @cifs_domain %>
-<% end %>
-<% if @cifs_hostannounce %>
-cifs.hostannounce=<%= @cifs_hostannounce %>
-<% end %>
+<% if @cifs_enabled %>cifs.enabled=<%= @cifs_enabled %><% end %>
+<% if @cifs_port %>cifs.tcpipSMB.port=<%= @cifs_port %><% end %>
+<% if @cifs_nameport %>cifs.netBIOSSMB.namePort=<%= @cifs_nameport %><% end %>
+<% if @cifs_datagramport %>cifs.netBIOSSMB.datagramPort=<%= @cifs_datagramport %><% end %>
+<% if @cifs_sessionport %>cifs.netBIOSSMB.sessionPort=<%= @cifs_sessionport %><% end %>
+<% if @cifs_servername %>cifs.serverName=<%= @cifs_servername %><% end %>
+<% if @cifs_domain %>cifs.domain=<%= @cifs_domain %><% end %>
+<% if @cifs_hostannounce %>cifs.hostannounce=<%= @cifs_hostannounce %><% end %>
 
-<% if @ftp_enabled %>
-ftp.enabled=<%= @ftp_enabled %>
-<% end %>
+<% if @ftp_enabled %>ftp.enabled=<%= @ftp_enabled %><% end %>
 
-<% if @guest_login %>
-alfresco.authentication.allowGuestLogin=<%= @guest_login %>
-<% end %>
+<% if @guest_login %>alfresco.authentication.allowGuestLogin=<%= @guest_login %><% end %>
 
-<% if @orphan_cleanup %>
-# Decide if content should be removed from the system immediately after being orphaned.
+<% if @orphan_cleanup %># Decide if content should be removed from the system immediately after being orphaned.
 # Do not change this unless you have examined the impact it has on your backup procedures.
-system.content.eagerOrphanCleanup=<%= @orphan_cleanup %>
-<% end %>
-<% if @orphan_days %>
-# The number of days to keep orphaned content in the content stores.
+system.content.eagerOrphanCleanup=<%= @orphan_cleanup %><% end %>
+<% if @orphan_days %># The number of days to keep orphaned content in the content stores.
 #    This has no effect on the 'deleted' content stores, which are not automatically emptied.
-system.content.orphanProtectDays=<%= @orphan_days %>
-<% end %>
-<% if @orphan_cron %>
-# The CRON expression to trigger the deletion of resources associated with orphaned content.
-system.content.orphanCleanup.cronExpression=<%= @orphan_cron %>
-<% end %>
+system.content.orphanProtectDays=<%= @orphan_days %><% end %>
+<% if @orphan_cron %># The CRON expression to trigger the deletion of resources associated with orphaned content.
+system.content.orphanCleanup.cronExpression=<%= @orphan_cron %><% end %>
 
 #
 # Outbound Email Configuration
 #-------------
-<% if @smtp_host %>
-mail.host=<%= @smtp_host %>
-<% end %>
-<% if @smtp_port %>
-mail.port=<%= @smtp_port %>
-<% end %>
-<% if @smtp_user %>
-mail.username=<%= scope.lookupvar('alfresco::smtp_user') %>
-<% end %>
-<% if @smtp_password %>
-mail.password=<%= @smtp_password %>
-<% end %>
-<% if @smtp_encoding %>
-mail.encoding=<%= @smtp_encoding %>
-<% end %>
-<% if @smtp_auth %>
-mail.smtp.auth=<%= @smtp_auth %>
-<% end %>
-<% if @smtp_from_enabled %>
-mail.from.enabled=<%= @smtp_from_enabled %>
-<% end %>
-<% if @smtp_from_default %>
-mail.from.default=<%= @smtp_from_default %>
-<% end %>
-<% if @smtp_timeout %>
-mail.smtp.timeout=<%= @smtp_timeout %>
-<% end %>
-<% if @smtp_starttls_enabled %>
-mail.smtp.starttls.enable=<%= @smtp_starttls_enabled %>
-<% end %>
-<% if @smtp_from %>
-mail.smtp.from=<%= @smtp_from %>
-<% end %>
-<% if @smtp_testmessage_send %>
-mail.testmessage.send=<%= @smtp_testmessage_send %>
-<% end %>
-<% if @smtp_testmessage_to %>
-mail.testmessage.to=<%= @smtp_testmessage_to %>
-<% end %>
-<% if @smtp_testmessage_subject %>
-mail.testmessage.subject=<%= @smtp_testmessage_subject %>
-<% end %>
-<% if @smtp_testmessage_text %>
-mail.testmessage.text=<%= @smtp_testmessage_text %>
-<% end %>
+<% if @smtp_host %>mail.host=<%= @smtp_host %><% end %>
+<% if @smtp_port %>mail.port=<%= @smtp_port %><% end %>
+<% if @smtp_user %>mail.username=<%= @smtp_user %><% end %>
+<% if @smtp_password %>mail.password=<%= @smtp_password %><% end %>
+<% if @smtp_encoding %>mail.encoding=<%= @smtp_encoding %><% end %>
+<% if @smtp_auth %>mail.smtp.auth=<%= @smtp_auth %><% end %>
+<% if @smtp_from_enabled %>mail.from.enabled=<%= @smtp_from_enabled %><% end %>
+<% if @smtp_from_default %>mail.from.default=<%= @smtp_from_default %><% end %>
+<% if @smtp_timeout %>mail.smtp.timeout=<%= @smtp_timeout %><% end %>
+<% if @smtp_starttls_enabled %>mail.smtp.starttls.enable=<%= @smtp_starttls_enabled %><% end %>
+<% if @smtp_from %>mail.smtp.from=<%= @smtp_from %><% end %>
+<% if @smtp_testmessage_send %>mail.testmessage.send=<%= @smtp_testmessage_send %><% end %>
+<% if @smtp_testmessage_to %>mail.testmessage.to=<%= @smtp_testmessage_to %><% end %>
+<% if @smtp_testmessage_subject %>mail.testmessage.subject=<%= @smtp_testmessage_subject %><% end %>
+<% if @smtp_testmessage_text %>mail.testmessage.text=<%= @smtp_testmessage_text %><% end %>
 
 #
 # Alfresco Email Service and Email Server
 #-------------
 
-<% if @mail_inbound_enabled %>
-# Enable/Disable the inbound email service.  The service could be used by processes other than
+<% if @mail_inbound_enabled %># Enable/Disable the inbound email service.  The service could be used by processes other than
 # the Email Server (e.g. direct RMI access) so this flag is independent of the Email Service.
 #-------------
-email.inbound.enabled=<%= @mail_inbound_enabled %>
-<% end %>
+email.inbound.enabled=<%= @mail_inbound_enabled %><% end %>
 
 # Email Server properties 
 #-------------
-<% if @mail_enabled %>
-email.server.enabled=<%= @mail_enabled %>
-<% end %>
-<% if @mail_port %>
-email.server.port=<%= @mail_port %>
-<% end %>
-<% if @mail_domain %>
-email.server.domain=<%= @mail_domain %>
-<% end %>
-<% if @mail_unknown_user %>
-email.inbound.unknownUser=<%= @mail_unknown_user %>
-<% end %>
+<% if @mail_enabled %>email.server.enabled=<%= @mail_enabled %><% end %>
+<% if @mail_port %>email.server.port=<%= @mail_port %><% end %>
+<% if @mail_domain %>email.server.domain=<%= @mail_domain %><% end %>
+<% if @mail_unknown_user %>email.inbound.unknownUser=<%= @mail_unknown_user %><% end %>
 
 # A comma separated list of email REGEX patterns of allowed senders.
 # If there are any values in the list then all sender email addresses
@@ -244,9 +132,7 @@ email.inbound.unknownUser=<%= @mail_unknown_user %>
 #   .*\@alfresco\.com, .*\@alfresco\.org
 # Allow anyone:
 #-------------
-<% if @mail_allowed_senders %>
-email.server.allowed.senders=<%= @mail_allowed_senders %>
-<% end %>
+<% if @mail_allowed_senders %>email.server.allowed.senders=<%= @mail_allowed_senders %><% end %>
 
 <% @custom_settings.each do |setting| -%>
 <%= setting %>
