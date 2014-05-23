@@ -2,68 +2,68 @@
 ## Common Alfresco Properties #
 ###############################
 
-<% if @dir_root %>
+<% if scope['alfresco::dir_root'] %>
 #
 # Content and index data location
 #
-dir.root=<%= scope.lookupvar('alfresco::dir_root') %>
+dir.root=<%= scope['alfresco::dir_root'] %>
 <% end %>
 
-<% if @alfresco::dir_keystore %>
+<% if scope['alfresco::dir_keystore'] %>
 #
 # Encryption keystores location
 #
-dir.keystore=<%= scope.lookupvar('alfresco::dir_keystore') %>
+dir.keystore=<%= scope['alfresco::dir_keystore'] %>
 <% end %>
 
-<% if @alfresco::database_user %>
+<% if scope['alfresco::database_user'] %>
 #
 # Database connection properties
 #
-db.username=<%= scope.lookupvar('alfresco::database_user') %>
+db.username=<%= scope['alfresco::database_user'] %>
 <% end %>
-<% if @alfresco::database_password %>
-db.password=<%= scope.lookupvar('alfresco::database_password') %>
+<% if scope['alfresco::database_password'] %>
+db.password=<%= scope['alfresco::database_password'] %>
 <% end %>
 
-<% if @alfresco::reencrypt %>
+<% if scope['alfresco::reencrypt'] %>
 #
 # Should encryptable properties be re-encrypted with new encryption keys on botstrap?
 #
-encryption.bootstrap.reencrypt=<%= scope.lookupvar('alfresco::reencrypt') %>
+encryption.bootstrap.reencrypt=<%= scope['alfresco::reencrypt'] %>
 <% end %>
 
-<% if @alfresco::ooo_enabled %>
+<% if scope['alfresco::ooo_enabled'] %>
 #
 # Enable/Disable the direct OpenOffice integration.
 #
-ooo.enabled=<%= scope.lookupvar('alfresco::ooo_enabled') %>
+ooo.enabled=<%= scope['alfresco::ooo_enabled'] %>
 <% end %>
 
 #
 # External locations
 #-------------
-<% if @alfresco::ooo_exe %>
-ooo.exe=<%= scope.lookupvar('alfresco::ooo_exe') %>
+<% if scope['alfresco::ooo_exe'] %>
+ooo.exe=<%= scope['alfresco::ooo_exe'] %>
 <% end %>
-<% if @alfresco::img_exe %>
-img.exe=<%= scope.lookupvar('alfresco::img_exe') %>
+<% if scope['alfresco::img_exe'] %>
+img.exe=<%= scope['alfresco::img_exe'] %>
 <% end %>
-<% if @alfresco::swf_exe %>
-swf.exe=<%= scope.lookupvar('alfresco::swf_exe') %>
+<% if scope['alfresco::swf_exe'] %>
+swf.exe=<%= scope['alfresco::swf_exe'] %>
 <% end %>
 
 #
 # The hostname and ports of your SOLR instance.
 #
-<% if @alfresco::solr_host %>
-solr.host=<%= scope.lookupvar('alfresco::solr_host') %>
+<% if scope['alfresco::solr_host'] %>
+solr.host=<%= scope['alfresco::solr_host'] %>
 <% end %>
-<% if @alfresco::solr_port %>
-solr.port=<%= scope.lookupvar('alfresco::solr_port') %>
+<% if scope['alfresco::solr_port'] %>
+solr.port=<%= scope['alfresco::solr_port'] %>
 <% end %>
-<% if @alfresco::solr_port_ssl %>
-solr.port.ssl=<%= scope.lookupvar('alfresco::solr_port_ssl') %>
+<% if scope['alfresco::solr_port_ssl'] %>
+solr.port.ssl=<%= scope['alfresco::solr_port_ssl'] %>
 <% end %>
 
 #
@@ -79,163 +79,163 @@ alfresco.rmi.services.host=0.0.0.0
 #
 # URL Generation Parameters (The ${localname} token is replaced by the local server name)
 #-------------
-<% if @alfresco::alfresco_contextroot %>
-alfresco.context=<%= scope.lookupvar('alfresco::alfresco_contextroot') %>
+<% if scope['alfresco::alfresco_contextroot'] %>
+alfresco.context=<%= scope['alfresco::alfresco_contextroot'] %>
 <% end %>
-<% if @alfresco::alfresco_host %>
-alfresco.host=<%= scope.lookupvar('alfresco::alfresco_host') %>
+<% if scope['alfresco::alfresco_host'] %>
+alfresco.host=<%= scope['alfresco::alfresco_host'] %>
 <% end %>
-<% if @alfresco::alfresco_port %>
-alfresco.port=<%= scope.lookupvar('alfresco::alfresco_port') %>
+<% if scope['alfresco::alfresco_port'] %>
+alfresco.port=<%= scope['alfresco::alfresco_port'] %>
 <% end %>
-<% if @alfresco::alfresco_protocol %>
-alfresco.protocol=<%= scope.lookupvar('alfresco::alfresco_protocol') %>
-<% end %>
-
-<% if @alfresco::share_contextroot %>
-share.context=<%= scope.lookupvar('alfresco::share_contextroot') %>
-<% end %>
-<% if @alfresco::share_host %>
-share.host=<%= scope.lookupvar('alfresco::share_host') %>
-<% end %>
-<% if @alfresco::share_port %>
-share.port=<%= scope.lookupvar('alfresco::share_port') %>
-<% end %>
-<% if @alfresco::share_protocol %>
-share.protocol=<%= scope.lookupvar('alfresco::share_protocol') %>
+<% if scope['alfresco::alfresco_protocol'] %>
+alfresco.protocol=<%= scope['alfresco::alfresco_protocol'] %>
 <% end %>
 
-<% if @alfresco::imap_enabled %>
-imap.server.enabled=<%= scope.lookupvar('alfresco::imap_enabled') %>
+<% if scope['alfresco::share_contextroot'] %>
+share.context=<%= scope['alfresco::share_contextroot'] %>
 <% end %>
-<% if @alfresco::imap_port %>
-imap.server.port=<%= scope.lookupvar('alfresco::imap_port') %>
+<% if scope['alfresco::share_host'] %>
+share.host=<%= scope['alfresco::share_host'] %>
 <% end %>
-<% if @alfresco::imap_host %>
-imap.server.host=<%= scope.lookupvar('alfresco::imap_host') %>
+<% if scope['alfresco::share_port'] %>
+share.port=<%= scope['alfresco::share_port'] %>
 <% end %>
-
-<% if @alfresco::cifs_enabled %>
-cifs.enabled=<%= scope.lookupvar('alfresco::cifs_enabled') %>
-<% end %>
-<% if @alfresco::cifs_port %>
-cifs.tcpipSMB.port=<%= scope.lookupvar('alfresco::cifs_port') %>
-<% end %>
-<% if @alfresco::cifs_nameport %>
-cifs.netBIOSSMB.namePort=<%= scope.lookupvar('alfresco::cifs_nameport') %>
-<% end %>
-<% if @alfresco::cifs_datagramport %>
-cifs.netBIOSSMB.datagramPort=<%= scope.lookupvar('alfresco::cifs_datagramport') %>
-<% end %>
-<% if @alfresco::cifs_sessionport %>
-cifs.netBIOSSMB.sessionPort=<%= scope.lookupvar('alfresco::cifs_sessionport') %>
-<% end %>
-<% if @alfresco::cifs_servername %>
-cifs.serverName=<%= scope.lookupvar('alfresco::cifs_servername') %>
-<% end %>
-<% if @alfresco::cifs_domain %>
-cifs.domain=<%= scope.lookupvar('alfresco::cifs_domain') %>
-<% end %>
-<% if @alfresco::cifs_hostannounce %>
-cifs.hostannounce=<%= scope.lookupvar('alfresco::cifs_hostannounce') %>
+<% if scope['alfresco::share_protocol'] %>
+share.protocol=<%= scope['alfresco::share_protocol'] %>
 <% end %>
 
-<% if @alfresco::ftp_enabled %>
-ftp.enabled=<%= scope.lookupvar('alfresco::ftp_enabled') %>
+<% if scope['alfresco::imap_enabled'] %>
+imap.server.enabled=<%= scope['alfresco::imap_enabled'] %>
+<% end %>
+<% if scope['alfresco::imap_port'] %>
+imap.server.port=<%= scope['alfresco::imap_port'] %>
+<% end %>
+<% if scope['alfresco::imap_host'] %>
+imap.server.host=<%= scope['alfresco::imap_host'] %>
 <% end %>
 
-<% if @alfresco::guest_login %>
-alfresco.authentication.allowGuestLogin=<%= scope.lookupvar('alfresco::guest_login') %>
+<% if scope['alfresco::cifs_enabled'] %>
+cifs.enabled=<%= scope['alfresco::cifs_enabled'] %>
+<% end %>
+<% if scope['alfresco::cifs_port'] %>
+cifs.tcpipSMB.port=<%= scope['alfresco::cifs_port'] %>
+<% end %>
+<% if scope['alfresco::cifs_nameport'] %>
+cifs.netBIOSSMB.namePort=<%= scope['alfresco::cifs_nameport'] %>
+<% end %>
+<% if scope['alfresco::cifs_datagramport'] %>
+cifs.netBIOSSMB.datagramPort=<%= scope['alfresco::cifs_datagramport'] %>
+<% end %>
+<% if scope['alfresco::cifs_sessionport'] %>
+cifs.netBIOSSMB.sessionPort=<%= scope['alfresco::cifs_sessionport'] %>
+<% end %>
+<% if scope['alfresco::cifs_servername'] %>
+cifs.serverName=<%= scope['alfresco::cifs_servername'] %>
+<% end %>
+<% if scope['alfresco::cifs_domain'] %>
+cifs.domain=<%= scope['alfresco::cifs_domain'] %>
+<% end %>
+<% if scope['alfresco::cifs_hostannounce'] %>
+cifs.hostannounce=<%= scope['alfresco::cifs_hostannounce'] %>
 <% end %>
 
-<% if @alfresco::orpahn_cleanup %>
+<% if scope['alfresco::ftp_enabled'] %>
+ftp.enabled=<%= scope['alfresco::ftp_enabled'] %>
+<% end %>
+
+<% if scope['alfresco::guest_login'] %>
+alfresco.authentication.allowGuestLogin=<%= scope['alfresco::guest_login'] %>
+<% end %>
+
+<% if scope['alfresco::orphan_cleanup'] %>
 # Decide if content should be removed from the system immediately after being orphaned.
 # Do not change this unless you have examined the impact it has on your backup procedures.
-system.content.eagerOrphanCleanup=<%= scope.lookupvar('alfresco::orphan_cleanup') %>
+system.content.eagerOrphanCleanup=<%= scope['alfresco::orphan_cleanup'] %>
 <% end %>
-<% if @alfresco::orphan_days %>
+<% if scope['alfresco::orphan_days'] %>
 # The number of days to keep orphaned content in the content stores.
 #    This has no effect on the 'deleted' content stores, which are not automatically emptied.
-system.content.orphanProtectDays=<%= scope.lookupvar('alfresco::orphan_days') %>
+system.content.orphanProtectDays=<%= scope['alfresco::orphan_days'] %>
 <% end %>
-<% if @alfresco::orphan_cron %>
+<% if scope['alfresco::orphan_cron'] %>
 # The CRON expression to trigger the deletion of resources associated with orphaned content.
-system.content.orphanCleanup.cronExpression=<%= scope.lookupvar('alfresco::orphan_cron') %>
+system.content.orphanCleanup.cronExpression=<%= scope['alfresco::orphan_cron'] %>
 <% end %>
 
 #
 # Outbound Email Configuration
 #-------------
-<% if @alfresco::smtp_host %>
-mail.host=<%= scope.lookupvar('alfresco::smtp_host') %>
+<% if scope['alfresco::smtp_host'] %>
+mail.host=<%= scope['alfresco::smtp_host'] %>
 <% end %>
-<% if @alfresco::smtp_port %>
-mail.port=<%= scope.lookupvar('alfresco::smtp_port') %>
+<% if scope['alfresco::smtp_port'] %>
+mail.port=<%= scope['alfresco::smtp_port'] %>
 <% end %>
-<% if @alfresco::smtp_user %>
+<% if scope['alfresco::smtp_user'] %>
 mail.username=<%= scope.lookupvar('alfresco::smtp_user') %>
 <% end %>
-<% if @alfresco::smtp_password %>
-mail.password=<%= scope.lookupvar('alfresco::smtp_password') %>
+<% if scope['alfresco::smtp_password'] %>
+mail.password=<%= scope['alfresco::smtp_password'] %>
 <% end %>
-<% if @alfresco::smtp_encoding %>
-mail.encoding=<%= scope.lookupvar('alfresco::smtp_encoding') %>
+<% if scope['alfresco::smtp_encoding'] %>
+mail.encoding=<%= scope['alfresco::smtp_encoding'] %>
 <% end %>
-<% if @alfresco::smtp_auth %>
-mail.smtp.auth=<%= scope.lookupvar('alfresco::smtp_auth') %>
+<% if scope['alfresco::smtp_auth'] %>
+mail.smtp.auth=<%= scope['alfresco::smtp_auth'] %>
 <% end %>
-<% if @alfresco::smtp_from_enabled %>
-mail.from.enabled=<%= scope.lookupvar('alfresco::smtp_from_enabled') %>
+<% if scope['alfresco::smtp_from_enabled'] %>
+mail.from.enabled=<%= scope['alfresco::smtp_from_enabled'] %>
 <% end %>
-<% if @alfresco::smtp_from_default %>
-mail.from.default=<%= scope.lookupvar('alfresco::smtp_from_default') %>
+<% if scope['alfresco::smtp_from_default'] %>
+mail.from.default=<%= scope['alfresco::smtp_from_default'] %>
 <% end %>
-<% if @alfresco::smtp_timeout %>
-mail.smtp.timeout=<%= scope.lookupvar('alfresco::smtp_timeout') %>
+<% if scope['alfresco::smtp_timeout'] %>
+mail.smtp.timeout=<%= scope['alfresco::smtp_timeout'] %>
 <% end %>
-<% if @alfresco::smtp_starttls_enabled %>
-mail.smtp.starttls.enable=<%= scope.lookupvar('alfresco::smtp_starttls_enabled') %>
+<% if scope['alfresco::smtp_starttls_enabled'] %>
+mail.smtp.starttls.enable=<%= scope['alfresco::smtp_starttls_enabled'] %>
 <% end %>
-<% if @alfresco::smtp_from %>
-mail.smtp.from=<%= scope.lookupvar('alfresco::smtp_from') %>
+<% if scope['alfresco::smtp_from'] %>
+mail.smtp.from=<%= scope['alfresco::smtp_from'] %>
 <% end %>
-<% if @alfresco::smtp_testmessage_send %>
-mail.testmessage.send=<%= scope.lookupvar('alfresco::smtp_testmessage_send') %>
+<% if scope['alfresco::smtp_testmessage_send'] %>
+mail.testmessage.send=<%= scope['alfresco::smtp_testmessage_send'] %>
 <% end %>
-<% if @alfresco::smtp_testmessage_to %>
-mail.testmessage.to=<%= scope.lookupvar('alfresco::smtp_testmessage_to') %>
+<% if scope['alfresco::smtp_testmessage_to'] %>
+mail.testmessage.to=<%= scope['alfresco::smtp_testmessage_to'] %>
 <% end %>
-<% if @alfresco::smtp_testmessage_subject %>
-mail.testmessage.subject=<%= scope.lookupvar('alfresco::smtp_testmessage_subject') %>
+<% if scope['alfresco::smtp_testmessage_subject'] %>
+mail.testmessage.subject=<%= scope['alfresco::smtp_testmessage_subject'] %>
 <% end %>
-<% if @alfresco::smtp_testmessage_text %>
-mail.testmessage.text=<%= scope.lookupvar('alfresco::smtp_testmessage_text') %>
+<% if scope['alfresco::smtp_testmessage_text'] %>
+mail.testmessage.text=<%= scope['alfresco::smtp_testmessage_text'] %>
 <% end %>
 
 #
 # Alfresco Email Service and Email Server
 #-------------
 
-<% if @alfresco::mail_inbound_enabled %>
+<% if scope['alfresco::mail_inbound_enabled'] %>
 # Enable/Disable the inbound email service.  The service could be used by processes other than
 # the Email Server (e.g. direct RMI access) so this flag is independent of the Email Service.
 #-------------
-email.inbound.enabled=<%= scope.lookupvar('alfresco::mail_inbound_enabled') %>
+email.inbound.enabled=<%= scope['alfresco::mail_inbound_enabled'] %>
 <% end %>
 
 # Email Server properties 
 #-------------
-<% if @alfresco::mail_enabled %>
-email.server.enabled=<%= scope.lookupvar('alfresco::mail_enabled') %>
+<% if scope['alfresco::mail_enabled'] %>
+email.server.enabled=<%= scope['alfresco::mail_enabled'] %>
 <% end %>
-<% if @alfresco::mail_port %>
-email.server.port=<%= scope.lookupvar('alfresco::mail_port') %>
+<% if scope['alfresco::mail_port'] %>
+email.server.port=<%= scope['alfresco::mail_port'] %>
 <% end %>
-<% if @alfresco::mail_domain %>
-email.server.domain=<%= scope.lookupvar('alfresco::mail_domain') %>
+<% if scope['alfresco::mail_domain'] %>
+email.server.domain=<%= scope['alfresco::mail_domain'] %>
 <% end %>
-<% if @alfresco::mail_unknown_user %>
-email.inbound.unknownUser=<%= scope.lookupvar('alfresco::mail_unknown_user') %>
+<% if scope['alfresco::mail_unknown_user'] %>
+email.inbound.unknownUser=<%= scope['alfresco::mail_unknown_user'] %>
 <% end %>
 
 # A comma separated list of email REGEX patterns of allowed senders.
@@ -244,10 +244,10 @@ email.inbound.unknownUser=<%= scope.lookupvar('alfresco::mail_unknown_user') %>
 #   .*\@alfresco\.com, .*\@alfresco\.org
 # Allow anyone:
 #-------------
-<% if @alfresco::mail_allowed_senders %>
-email.server.allowed.senders=<%= scope.lookupvar('alfresco::mail_allowed_senders') %>
+<% if scope['alfresco::mail_allowed_senders'] %>
+email.server.allowed.senders=<%= scope['alfresco::mail_allowed_senders'] %>
 <% end %>
 
-<% scope.lookupvar('alfresco::custom_settings').each do |setting| -%>
+<% scope['alfresco::custom_settings'].each do |setting| -%>
 <%= setting %>
 <% end -%>
