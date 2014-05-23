@@ -76,6 +76,7 @@ class alfresco (
   $dir_root                  = $alfresco::params::dir_root,
   $dir_keystore              = $alfresco::params::dir_keystore,
   $user                      = $alfresco::params::user,
+  $group                     = $alfresco::params::group,
   $package_name              = $alfresco::params::package_name,
   $version                   = $alfresco::params::version,
   $number                    = $alfresco::params::number,
