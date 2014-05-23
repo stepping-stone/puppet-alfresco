@@ -102,6 +102,7 @@ class alfresco::params {
       $dir_root               = undef
       $dir_keystore           = undef
       $user                   = 'alfresco'
+      $group                  = 'alfresco'
       $alfresco_contextroot   = 'alfresco'
       $share_contextroot      = 'share'
       $webapp_base            = '/srv'
@@ -116,8 +117,9 @@ class alfresco::params {
       $number                 = undef
       $build                  = undef
       $dir_root               = '/var/lib/alfresco-4.2/data'
-      $dir_keystore           = '/var/lib/alfresco-4.2/keystore'
-      $user                   = undef
+      $dir_keystore           = '/etc/alfresco-4.2/keystore'
+      $user                   = 'root'
+      $group                  = 'alfresco'
       $alfresco_contextroot   = undef
       $share_contextroot      = undef
       $webapp_base            = undef
