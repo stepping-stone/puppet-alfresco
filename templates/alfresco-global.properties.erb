@@ -15,8 +15,8 @@ dir.keystore=<%= @dir_keystore %><% end %>
 #
 # Database connection properties
 #
-<% if @database_user %>db.username=<%= @database_user %><% end %>
-<% if @database_password %>db.password=<%= @database_password %><% end %>
+<% if @database_user_debian %>db.username=<%= @database_user_debian %><% end %>
+<% if @database_password_debian %>db.password=<%= @database_password_debian %><% end %>
 
 <% if @reencrypt %>#
 # Should encryptable properties be re-encrypted with new encryption keys on botstrap?
