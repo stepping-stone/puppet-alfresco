@@ -51,9 +51,9 @@ class alfresco::params {
   $imap_enabled             = undef
   $custom_settings          = []
 
-  include ::afresco
+  $real_cifs = $alfresco::cifs_enabled
 
-  $cifs_servername = str2bool($alfresco::cifs_enabled) ? {
+  $cifs_servername = str2bool($real_cifs) ? {
     true  => $hostname,
     false => undef,
   }
