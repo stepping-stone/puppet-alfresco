@@ -61,9 +61,12 @@ class alfresco::config {
         path    => '/etc/alfresco-4.2/server.xml',
         content => template("alfresco/server.erb"),
       }
-      exec { 'replace-init':
-        command => "/bin/sed -i -e 's|exec \${JAVA_HOME}/bin/\${cmd}|exec /usr/bin/authbind|' -e ':a;N;$!ba;s|\${JAVA_OPTS} \\\\n.*\${args}|--deep \${JAVA_HOME}/bin/\${cmd} \${JAVA_OPTS} \\ \\n \${args}|' /etc/init.d/alfresco-4.2",
-        user => 'root',
+      }
+      file { 'alfresco-4.2':
+        path    => '/etc/init.d/alfresco-4.2'
+	content => template("alfresco/alfresco-4.2.erb")
+	owner   => 'root',
+	group   => 'root',
       }
     }
     default: {
