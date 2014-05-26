@@ -51,7 +51,7 @@ class alfresco::params {
   $imap_enabled             = undef
   $custom_settings          = []
 
-notic("The value is: '${alfresco::cifs_enabled}'")
+notice("The value is: '${alfresco::cifs_enabled}'")
 
 
   $cifs_servername = str2bool($real_cifs) ? {
