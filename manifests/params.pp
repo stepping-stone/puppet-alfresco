@@ -52,7 +52,7 @@ class alfresco::params {
   $imap_enabled             = undef
   $custom_settings          = []
 
-  if $alfresco::cifs_enabled == 'true' {
+  if $alfresco::cifs_enabled == 'test' {
     $cifs_servername           = $hostname
     $cifs_domain               = $domain
     $cifs_hostannounce         = 'false'
