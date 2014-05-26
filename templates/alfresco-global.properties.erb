@@ -70,10 +70,10 @@ alfresco.rmi.services.host=0.0.0.0
 <% if @imap_host %>imap.server.host=<%= @imap_host %><% end %>
 
 <% if @cifs_enabled %>cifs.enabled=<%= @cifs_enabled %><% end %>
-<% if @cifs_port %>cifs.tcpipSMB.port=<%= @cifs_port %><% end %>
-<% if @cifs_nameport %>cifs.netBIOSSMB.namePort=<%= @cifs_nameport %><% end %>
-<% if @cifs_datagramport %>cifs.netBIOSSMB.datagramPort=<%= @cifs_datagramport %><% end %>
-<% if @cifs_sessionport %>cifs.netBIOSSMB.sessionPort=<%= @cifs_sessionport %><% end %>
+<% if @cifs_tcpip_port %>cifs.tcpipSMB.port=<%= @cifs_tcpip_port %><% end %>
+<% if @cifs_netbios_nameport %>cifs.netBIOSSMB.namePort=<%= @cifs_netbios_nameport %><% end %>
+<% if @cifs_netbios_datagramport %>cifs.netBIOSSMB.datagramPort=<%= @cifs_netbios_datagramport %><% end %>
+<% if @cifs_netbios_sessionport %>cifs.netBIOSSMB.sessionPort=<%= @cifs_netbios_sessionport %><% end %>
 <% if @cifs_servername %>cifs.serverName=<%= @cifs_servername %><% end %>
 <% if @cifs_domain %>cifs.domain=<%= @cifs_domain %><% end %>
 <% if @cifs_hostannounce %>cifs.hostannounce=<%= @cifs_hostannounce %><% end %>
