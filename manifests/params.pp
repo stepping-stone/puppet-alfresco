@@ -19,6 +19,13 @@ class alfresco::params {
   $solr_port                 = undef
   $solr_port_ssl             = undef
   $cifs_enabled              = undef
+  $cifs_servername           = undef
+  $cifs_domain               = undef
+  $cifs_hostannounce         = undef
+  $cifs_tcpip_port           = undef
+  $cifs_netbios_nameport     = undef
+  $cifs_netbios_datagramport = undef
+  $cifs_netbios_sessionport  = undef
   $database_user             = 'alfresco'
   $database_password         = 'alfresco'
   $database_driver           = 'org.postgresql.Driver'
@@ -50,49 +57,14 @@ class alfresco::params {
   $smtp_testmessage_text     = undef
   $mail_inbound_enabled      = undef
   $mail_enabled              = undef
+  $mail_port                 = undef
+  $mail_domain               = undef
+  $mail_unknown_user         = undef
+  $mail_allowed_senders      = undef
   $imap_enabled              = undef
+  $imap_port                 = undef
+  $imap_host                 = undef
   $custom_settings           = []
-
-  if $::cifs_enabled == 'true' {
-    $cifs_servername           = $hostname
-    $cifs_domain               = $domain
-    $cifs_hostannounce         = 'false'
-    $cifs_tcpip_port           = 445
-    $cifs_netbios_nameport     = 137
-    $cifs_netbios_datagramport = 138
-    $cifs_netbios_sessionport  = 139
-  }
-  else {
-    $cifs_servername           = undef
-    $cifs_domain               = undef
-    $cifs_hostannounce         = undef
-    $cifs_tcpip_port           = undef
-    $cifs_netbios_nameport     = undef
-    $cifs_netbios_datagramport = undef
-    $cifs_netbios_sessionport  = undef
-  }
-
-  if $alfresco::mail_inbound_enabled == 'true' and $alfresco::mail_enabled == 'true' {
-    $mail_port            = 1025
-    $mail_domain          = $domain
-    $mail_unknown_user    = 'anonymous'
-    $mail_allowed_senders = '.*'
-  }
-  else {
-    $mail_port            = undef
-    $mail_domain          = undef
-    $mail_unknown_user    = undef
-    $mail_allowed_senders = undef
-  }
-
-  if $alfresco::imap_enabled == 'true' {
-    $imap_port = 1143
-    $imap_host = $fqdn
-  }
-  else {
-    $imap_port = undef
-    $imap_host = undef
-  }
 
   case $::osfamily {
     debian: {
