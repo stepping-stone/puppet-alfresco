@@ -25,8 +25,9 @@ class alfresco::params {
   $database_url              = 'jdbc:postgresql://localhost/alfresco'
   $ftp_enabled               = 'false'
   $guest_login               = 'false'
-  $orpahn_protect_days       = undef
-  $orphan_cleanup_cron       = undef
+  $orpahn_cleanup            = undef
+  $orpahn_day                = undef
+  $orphan_cron               = undef
   $reencrypt                 = undef
   $ooo_enabled               = 'false'
   $img_exe                   = '/usr/bin/convert'
