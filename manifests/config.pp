@@ -57,6 +57,10 @@ class alfresco::config {
         path    => '/etc/alfresco-4.2/Catalina/localhost/alfresco.xml',
         content => template("alfresco/alfresco.erb"),
       }
+      file { 'server.xml':
+        path    => '/etc/alfresco-4.2/server.xml',
+        content => template("alfresco/server.erb"),
+      }
     }
     default: {
       fail("Unsupported platform: ${::osfamily}/${::operatingsystem}")
