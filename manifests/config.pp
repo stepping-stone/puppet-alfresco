@@ -62,7 +62,7 @@ class alfresco::config {
         content => template("alfresco/server.erb"),
       }
       exec { 'replace-init':
-        command => "/bin/sed -i -e 's|exec \${JAVA_HOME}/bin/\${cmd}|exec /usr/bin/authbind|' -e ':a;N;$!ba;s|\${JAVA_OPTS} \\\\n.*\${args}|--deep \${JAVA_HOME}/bin/\${cmd} \${JAVA_OPTS} \\\ \n \${args}|' /etc/init.d/alfresco-4.2",
+        command => "/bin/sed -i -e 's|exec \${JAVA_HOME}/bin/\${cmd}|exec /usr/bin/authbind|' -e ':a;N;$!ba;s|\${JAVA_OPTS} \\\\n.*\${args}|--deep \${JAVA_HOME}/bin/\${cmd} \${JAVA_OPTS} \\\\ \n \${args}|' /etc/init.d/alfresco-4.2",
         user => 'root',
       }
     }
