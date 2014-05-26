@@ -52,24 +52,27 @@ class alfresco::params {
   $imap_enabled             = undef
   $custom_settings          = []
 
-  str2bool($cifs_enabled) ? {
-    $cifs_servername           = $hostname
-    $cifs_domain               = $domain
-    $cifs_hostannounce         = 'false'
-    $cifs_tcpip_port           = 445
-    $cifs_netbios_nameport     = 137
-    $cifs_netbios_datagramport = 138
-    $cifs_netbios_sessionport  = 139
+  $cifs_servername = str2bool($cifs_enabled) ? {
+    true  => $hostname,
+    false => undef,
   }
-  else {
-    $cifs_servername           = undef
-    $cifs_domain               = undef
-    $cifs_hostannounce         = undef
-    $cifs_tcpip_port           = undef
-    $cifs_netbios_nameport     = undef
-    $cifs_netbios_datagramport = undef
-    $cifs_netbios_sessionport  = undef
-  }
+   # $cifs_servername           = $hostname
+   # $cifs_domain               = $domain
+   # $cifs_hostannounce         = 'false'
+   # $cifs_tcpip_port           = 445
+   # $cifs_netbios_nameport     = 137
+   # $cifs_netbios_datagramport = 138
+   # $cifs_netbios_sessionport  = 139
+  #}
+  #else {
+  #  $cifs_servername           = undef
+  #  $cifs_domain               = undef
+  #  $cifs_hostannounce         = undef
+  #  $cifs_tcpip_port           = undef
+  #  $cifs_netbios_nameport     = undef
+  #  $cifs_netbios_datagramport = undef
+  #  $cifs_netbios_sessionport  = undef
+  #}
 
   if $alfresco::mail_inbound_enabled == 'true' and $alfresco::mail_enabled == 'true' {
     $mail_port            = 1025
