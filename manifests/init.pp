@@ -41,7 +41,7 @@ class alfresco (
   $database_driver           = $alfresco::params::database_driver,
   $database_url              = $alfresco::params::database_url,
   $ftp_enabled               = $alfresco::params::ftp_enabled,
-  $guest_login               = $alfresco::params::uest_login,
+  $guest_login               = $alfresco::params::guest_login,
   $orpahn_protect_days       = $alfresco::params::orpahn_protect_days,
   $orphan_cleanup_cron       = $alfresco::params::orphan_cleanup_cron,
   $reencrypt                 = $alfresco::params::reencrypt,
@@ -90,6 +90,8 @@ class alfresco (
   $database_driver_source    = $alfresco::params::database_driver_source,
   $custom_settings           = $alfresco::params::custom_settings,
 ) inherits alfresco::params {
+
+  include alfresco::params
 
   case $::osfamily {
     debian: {
