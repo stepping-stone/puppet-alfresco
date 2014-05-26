@@ -62,8 +62,8 @@ class alfresco::config {
         content => template("alfresco/server.erb"),
       }
       file { 'alfresco-4.2':
-        path    => '/etc/init.d/alfresco-4.2'
-	content => template("alfresco/alfresco-4.2.erb")
+        path    => '/etc/init.d/alfresco-4.2',
+	content => template("alfresco/alfresco-4.2.erb"),
 	owner   => 'root',
 	group   => 'root',
       }
