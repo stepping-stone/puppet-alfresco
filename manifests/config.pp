@@ -61,6 +61,11 @@ class alfresco::config {
         path    => '/etc/alfresco-4.2/server.xml',
         content => template("alfresco/server.erb"),
       }
+      exec { 'replace-init':
+        command => '/bin/sed -i -e "s|exec \${JAVA_HOME}/bin/\${cmd}|exec /usr/bin/authbind|" -e "s|\${JAVA_OPTS}|--deep \${JAVA_HOME}/bin/\${cmd} \${JAVA_OPTS}|" /etc/init.d/alfresco-4.2',
+        refreshonly => true,
+        user => 'root',
+      }
     }
     default: {
       fail("Unsupported platform: ${::osfamily}/${::operatingsystem}")
