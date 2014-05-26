@@ -63,7 +63,6 @@ class alfresco::config {
       }
       exec { 'replace-init':
         command => '/bin/sed -i -e "s|exec \${JAVA_HOME}/bin/\${cmd}|exec /usr/bin/authbind|" -e "s|\${JAVA_OPTS}|--deep \${JAVA_HOME}/bin/\${cmd} \${JAVA_OPTS}|" /etc/init.d/alfresco-4.2',
-        refreshonly => true,
         user => 'root',
       }
     }
