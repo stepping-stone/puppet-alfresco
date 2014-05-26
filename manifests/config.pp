@@ -66,6 +66,7 @@ class alfresco::config {
 	content => template("alfresco/alfresco-4.2.erb"),
 	owner   => 'root',
 	group   => 'root',
+	mode    => 0755,
       }
     }
     default: {
