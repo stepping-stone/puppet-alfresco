@@ -43,28 +43,31 @@ class alfresco::config {
     }
     gentoo: {
       file { 'alfresco-global.properties':
+        ensure  => file,
         path    => '/etc/alfresco-4.2/classes/alfresco-global.properties',
         content => template("alfresco/alfresco-global.properties.erb"),
-        owner => $user,
-	group => $group,
-	mode  => 0640,
+        owner   => $user,
+	group   => $group,
+	mode    => 0640,
       }
-
       file { 'alfresco.xml':
+        ensure  => file,
         path    => '/etc/alfresco-4.2/Catalina/localhost/alfresco.xml',
         content => template("alfresco/alfresco.erb"),
-        owner => $user,
-	group => $group,
-	mode  => 0640,
+        owner   => $user,
+	group   => $group,
+	mode    => 0640,
       }
       file { 'server.xml':
+        ensure  => file,
         path    => '/etc/alfresco-4.2/server.xml',
         content => template("alfresco/server.erb"),
-        owner => $user,
-	group => $group,
-	mode  => 0640,
+        owner   => $user,
+	group   => $group,
+	mode    => 0640,
       }
       file { 'alfresco-4.2':
+        ensure  => file,
         path    => '/etc/init.d/alfresco-4.2',
 	content => template("alfresco/alfresco-4.2.erb"),
 	owner   => 'root',
