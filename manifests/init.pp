@@ -74,6 +74,7 @@ class alfresco (
   $imap_enabled              = $alfresco::params::imap_enabled,
   $imap_port                 = $alfresco::params::imap_port,
   $imap_host                 = $alfresco::params::imap_host,
+  $alfresco_dir              = $alfresco::params::alfresco_dir,
   $dir_root                  = $alfresco::params::dir_root,
   $dir_keystore              = $alfresco::params::dir_keystore,
   $user                      = $alfresco::params::user,

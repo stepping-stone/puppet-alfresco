@@ -72,6 +72,8 @@ class alfresco::params {
       $version                = '4.2.a'
       $number                 = 7
       $build                  = 4428
+      webapp_base             = '/srv'
+      $alfresco_dir           = "${webapp_base/${user}"
       $dir_root               = undef
       $dir_keystore           = undef
       $user                   = 'alfresco'
@@ -89,6 +91,7 @@ class alfresco::params {
       $version                = 'latest'
       $number                 = undef
       $build                  = undef
+      $alfresco_dir           = '/etc/alfresco-4.2/'
       $dir_root               = '/var/lib/alfresco-4.2/data'
       $dir_keystore           = '/etc/alfresco-4.2/keystore'
       $user                   = 'root'

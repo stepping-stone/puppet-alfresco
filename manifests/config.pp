@@ -16,29 +16,29 @@ class alfresco::config {
   case $::osfamily {
     debian: {
       file { "alfresco-global.properties":
-        path => "${alfresco_dir}/tomcat/shared/classes/alfresco-global.properties",
+        path => "${alfresco::alfresco_dir}/tomcat/shared/classes/alfresco-global.properties",
         content => template("alfresco/alfresco-global.properties.erb"),
       }
 
-      file { "${alfresco_dir}/tomcat/shared/classes/alfresco":
+      file { "${alfresco::alfresco_dir}/tomcat/shared/classes/alfresco":
         ensure => directory,
-        owner => $user,
-        group => $group,
+        owner => $alfresco::user,
+        group => $alfresco::group,
         mode => 0755,
       }
 
-      file { "${alfresco_dir}/tomcat/shared/classes/alfresco/web-extension":
+      file { "${alfresco::alfresco_dir}/tomcat/shared/classes/alfresco/web-extension":
         ensure => directory,
-        owner => $user,
-        group => $group,
+        owner => $alfresco::user,
+        group => $alfresco::group,
         mode => 0755,
-        require => File["${alfresco_dir}/tomcat/shared/classes/alfresco"],
+        require => File["${alfresco::alfresco_dir}/tomcat/shared/classes/alfresco"],
       }
 
       file { "share-config-custom.xml":
-        path => "${alfresco_dir}/tomcat/shared/classes/alfresco/web-extension/share-config-custom.xml",
+        path => "${alfresco::alfresco_dir}/tomcat/shared/classes/alfresco/web-extension/share-config-custom.xml",
         content => template("alfresco/share-config-custom.xml.erb"),
-        require => File["${alfresco_dir}/tomcat/shared/classes/alfresco/web-extension"],
+        require => File["${alfresco::alfresco_dir}/tomcat/shared/classes/alfresco/web-extension"],
       }
     }
     gentoo: {
@@ -49,17 +49,17 @@ class alfresco::config {
       }
       file { 'alfresco-global.properties':
         ensure  => file,
-        path    => '/etc/alfresco-4.2/classes/alfresco-global.properties',
+        path    => "${alfresco::alfresco_dir}/classes/alfresco-global.properties",
         content => template("alfresco/alfresco-global.properties.erb"),
       }
       file { 'alfresco.xml':
         ensure  => file,
-        path    => '/etc/alfresco-4.2/Catalina/localhost/alfresco.xml',
+        path    => "${alfresco::alfressco_dir}/Catalina/localhost/alfresco.xml",
         content => template("alfresco/alfresco.erb"),
       }
       file { 'server.xml':
         ensure  => file,
-        path    => '/etc/alfresco-4.2/server.xml',
+        path    => "${alfresco::alfresco_dir}/server.xml",
         content => template("alfresco/server.erb"),
       }
       file { 'alfresco-4.2':
