@@ -134,6 +134,15 @@ email.inbound.enabled=<%= @mail_inbound_enabled %><% end %>
 #-------------
 <% if @mail_allowed_senders %>email.server.allowed.senders=<%= @mail_allowed_senders %><% end %>
 
+<% if @database_name %>db.name=<%= @database_name %><% end %>
+<% if @database_user %>db.username=<%= @database_user %><% end %>
+<% if @database_password %>db.password=<%= @database_password %><% end %>
+
+<% if @database_host %>db.host=<%= @database_host %><% end %>
+<% if @database_port %>db.port=<%= @database_port %><% end %>
+<% if @database_driver %>db.driver=<%= @database_driver %><% end %>
+<% if @database_url %>db.url=<%= @database_url %><% end %>
+
 <% @custom_settings.each do |setting| -%>
 <%= setting %>
 <% end -%>
