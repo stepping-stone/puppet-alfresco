@@ -42,7 +42,6 @@ class alfresco::config {
       }
     }
     gentoo: {
-      notify {$alfresco::alfresco_dir:}
       File {
         owner => $alfresco::user,
         group => $alfresco::group,
@@ -50,7 +49,7 @@ class alfresco::config {
       }
       file { 'alfresco-global.properties':
         ensure  => file,
-        path    => "$alfresco_dir/classes/alfresco-global.properties",
+        path    => "${::alfresco::alfresco_dir}/classes/alfresco-global.properties",
         content => template("alfresco/alfresco-global.properties.erb"),
       }
       file { 'alfresco.xml':
