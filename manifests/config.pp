@@ -42,6 +42,7 @@ class alfresco::config {
       }
     }
     gentoo: {
+      notify {$alfresco::alfresco_dir:}
       File {
         owner => $alfresco::user,
         group => $alfresco::group,
