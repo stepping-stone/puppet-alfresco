@@ -26,6 +26,9 @@ class alfresco::params {
   $cifs_netbios_nameport     = undef
   $cifs_netbios_datagramport = undef
   $cifs_netbios_sessionport  = undef
+  $database_name             = 'alfresco'
+  $database_host             = 'localhost'
+  $database_port             = '5432'
   $database_user             = 'alfresco'
   $database_password         = 'alfresco'
   $database_driver           = 'org.postgresql.Driver'
