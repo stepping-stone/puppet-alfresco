@@ -72,7 +72,7 @@ class alfresco::params {
       $version                = '4.2.a'
       $number                 = 7
       $build                  = 4428
-      webapp_base             = '/srv'
+      $webapp_base            = '/srv'
       $alfresco_dir           = "${webapp_base/${user}"
       $dir_root               = undef
       $dir_keystore           = undef
