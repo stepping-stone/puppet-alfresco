@@ -93,7 +93,7 @@ class alfresco::params {
       $build                  = undef
       $user                   = 'root'
       $group                  = 'alfresco'
-      $alfresco_dir           = '/etc/alfresco-4.2/'
+      $alfresco_dir           = '/etc/alfresco-4.2'
       $dir_root               = '/var/lib/alfresco-4.2/data'
       $dir_keystore           = '/etc/alfresco-4.2/keystore'
       $alfresco_contextroot   = undef
