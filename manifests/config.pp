@@ -65,6 +65,10 @@ class alfresco::config {
 	group   => 'root',
 	mode    => 0755,
       }
+      exec { "replace-conf":
+        command => '/bin/sed -i -e "s|TOMCAT_EXTRA_JARS=\"\"|TOMCAT_EXTRA_JARS=\"jdbc-postgresql\"|" /etc/conf.d/alfresco-4.2',
+        user => "root",
+      }
     }
     default: {
       fail("Unsupported platform: ${::osfamily}/${::operatingsystem}")
