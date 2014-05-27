@@ -54,8 +54,8 @@ class alfresco::config {
         ensure  => file,
         path    => '/etc/alfresco-4.2/Catalina/localhost/alfresco.xml',
         content => template("alfresco/alfresco.erb"),
-        owner   => $user,
-	group   => $group,
+        owner   => $alfresco::user,
+	group   => $alfresco::group,
 	mode    => 0640,
       }
       file { 'server.xml':
