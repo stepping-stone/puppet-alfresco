@@ -75,7 +75,7 @@ class alfresco::params {
       $webapp_base            = '/srv'
       $user                   = 'alfresco'
       $group                  = 'alfresco'
-      $alfresco_dir           = "${webapp_base/${user}"
+      $alfresco_dir           = "${webapp_base}/${user}"
       $dir_root               = undef
       $dir_keystore           = undef
       $alfresco_contextroot   = 'alfresco'
