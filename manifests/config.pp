@@ -49,7 +49,7 @@ class alfresco::config {
       }
       file { 'alfresco-global.properties':
         ensure  => file,
-        path    => "${alfresco::alfresco_dir}/classes/alfresco-global.properties",
+        path    => "${alfresco_dir}/classes/alfresco-global.properties",
         content => template("alfresco/alfresco-global.properties.erb"),
       }
       file { 'alfresco.xml':
