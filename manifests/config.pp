@@ -52,11 +52,6 @@ class alfresco::config {
         path    => "${::alfresco::alfresco_dir}/classes/alfresco-global.properties",
         content => template("alfresco/alfresco-global.properties.erb"),
       }
-      file { 'alfresco.xml':
-        ensure  => file,
-        path    => "${::alfresco::alfresco_dir}/Catalina/localhost/alfresco.xml",
-        content => template("alfresco/alfresco.erb"),
-      }
       file { 'server.xml':
         ensure  => file,
         path    => "${::alfresco::alfresco_dir}/server.xml",
