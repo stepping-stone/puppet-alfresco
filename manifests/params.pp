@@ -39,6 +39,7 @@ class alfresco::params {
   $orpahn_day                = undef
   $orphan_cron               = undef
   $reencrypt                 = undef
+  $index_recovery            = 'AUTO'
   $ooo_enabled               = 'false'
   $img_exe                   = '/usr/bin/convert'
   $swf_exe                   = '/usr/bin/pdf2swf'

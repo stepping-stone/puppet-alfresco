@@ -49,6 +49,7 @@ class alfresco (
   $orphan_days               = $alfresco::params::orphan_days,
   $orphan_cron               = $alfresco::params::orphan_cron,
   $reencrypt                 = $alfresco::params::reencrypt,
+  $index_recovery            = $alfresco::params::index_recovery,
   $ooo_enabled               = $alfresco::params::ooo_enabled,
   $img_exe                   = $alfresco::params::img_exe,
   $swf_exe                   = $alfresco::params::swf_exe,

@@ -143,6 +143,8 @@ email.inbound.enabled=<%= @mail_inbound_enabled %><% end %>
 <% if @database_driver %>db.driver=<%= @database_driver %><% end %>
 <% if @database_url %>db.url=<%= @database_url %><% end %>
 
+<% if @index_recovery %>index.recovery.mode=<%= @index_recovery %><% end %>
+
 <% @custom_settings.each do |setting| -%>
 <%= setting %>
 <% end -%>
